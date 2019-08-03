@@ -22,7 +22,7 @@ $senha = 'bomdia'; //Mon mot de passe
 $secure = new Secure();// J'instancie ma class
 $hash = $secure->getHash($senha);//Je souhaite le hash de "bomdia" soumis par l'utilisateur
 $response = $secure->getCompare($senha, $hash);// Maintenant je veux comparer mon mot de passe et son hash avec par ex avec une bdd
-// Je n'ai pas utiliser de constructeur, car c'est une demo vraiment simple !
+// Je n'ai pas utiliser de constructeur, car c'est une dsimple demo.
 echo 'hash is ' .$hash. ' and response is ' .$response;
 
 
