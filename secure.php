@@ -5,26 +5,24 @@ class Secure{
 public $mdp;
 public $hash;
 
-public function __construct($mdp){
-  $this->mdp = $mdp;
-}
 
-public function getHash(){
-  if($this->mdp <= 72){
-    return password_hash($this->mdp, PASSWORD_BCRYPT);
+public function getHash($mdp){
+  if($mdp <= 72){
+    return password_hash($mdp, PASSWORD_BCRYPT);
   }
   else{
     return false;
   }
 }
-public function getCompare($hash){
-  return password_verify($this->mdp, $hash); // return TRUE or FALSE
+public function getCompare($mdp, $hash){
+  return password_verify($mdp, $hash); // return TRUE or FALSE
 }
 }
-$secure = new Secure("password");
-$hash = $secure->getHash();
-$response = $secure->getCompare($hash);
-
+$senha = 'bomdia'; //Mon mot de passe
+$secure = new Secure();// J'instancie ma class
+$hash = $secure->getHash($senha);//Je souhaite le hash de "bomdia" soumis par l'utilisateur
+$response = $secure->getCompare($senha, $hash);// Maintenant je veux compare mon mot de passe et son hash avec par ex avec une bdd
+// Je n'ai pas utiliser de constructeur, car c'est une demo vraiment simple !
 echo 'hash is ' .$hash. ' and response is ' .$response;
 
 
