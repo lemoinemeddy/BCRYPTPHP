@@ -1,28 +1,17 @@
 <?php
-
-class Secure{
-
-public $mdp;
-public $hash;
-
-
-public function getHash($mdp){
+public function connect($mdp, $user){
   if($mdp <= 72){
-    return password_hash($mdp, PASSWORD_BCRYPT);
+    $hash = password_hash($mdp, PASSWORD_BCRYPT);
+    $hashbdd = '';
+    return password_verify($hash_bdd, $hash); // return TRUE or FALSE
   }
   else{
-    return false;
+    return 'needed < 72';
   }
 }
-public function getCompare($mdp, $hash){
-  return password_verify($mdp, $hash); // return TRUE or FALSE
-}
-}
-$senha = 'bomdia'; //Mon mot de passe
-$secure = new Secure();// J'instancie ma class
-$hash = $secure->getHash($senha);//Je souhaite le hash de "bomdia" soumis par l'utilisateur
-$response = $secure->getCompare($senha, $hash);// Maintenant je veux comparer mon mot de passe et son hash avec par ex  une bdd
-echo 'hash is ' .$hash. ' and response is ' .$response;
-
-
+$mdp = "meddy";
+$user = "meddy";
+$reponse = connect($mdp, $user);
+echo $reponse;
 ?>
+
