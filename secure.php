@@ -1,5 +1,5 @@
 <?php
-class secure{
+class member{
 public __constructor($user,$mdp){
 $this->connect($user, $mdp);
 }
