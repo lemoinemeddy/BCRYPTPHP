@@ -1,4 +1,8 @@
 <?php
+class secure{
+public __constructor($user,$mdp){
+$this->connect($user, $mdp);
+}
 public function connect($mdp, $user){
   if($mdp <= 72){
     $hash = password_hash($mdp, PASSWORD_BCRYPT);
@@ -9,9 +13,7 @@ public function connect($mdp, $user){
     return 'needed < 72';
   }
 }
-$mdp = "meddy";
-$user = "meddy";
-$reponse = connect($mdp, $user);
-echo $reponse;
+}
+
 ?>
 
