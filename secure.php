@@ -1,9 +1,9 @@
 <?php
 class member{
 public __constructor($user,$mdp){
-$this->connect($user, $mdp);
+$this->try_connect($user, $mdp);
 }
-public function connect($mdp, $user){
+public function try_connect($user, $mdp){
   if($mdp <= 72){
     $hash = password_hash($mdp, PASSWORD_BCRYPT);
     $hashbdd = '';
