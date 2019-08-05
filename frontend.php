@@ -1,5 +1,5 @@
 <?php
-require 'secure.php';
+require 'permission.php';
 $user = new permission();
 
 if(isset($_POST['user']) && isset($_POST['mdp']) && $_POST['params'] == "login"){
