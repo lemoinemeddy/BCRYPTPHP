@@ -1,9 +1,10 @@
 <?php
 require 'permission.php';
-$user = new permission();
 
 if(isset($_POST['user']) && isset($_POST['mdp']) && $_POST['params'] == "login"){
-$user->try_signin($_POST['user'], $_POST['mdp']);
-echo $user;
+
+$user = new permission($_POST['user'], $_POST['mdp']);
+$response = $user->try_signin();
+echo $response;
 }
 ?>
