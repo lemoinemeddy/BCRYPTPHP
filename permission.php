@@ -11,11 +11,16 @@ public function try_signin($user, $mdp){
     $payload = $user + time();
     $token = password_hash($payload, PASSWORD_BCRYPT)
     return '{
-    "auth":'.$response.',
-    "token":'.$token.'
+    "auth":"'.$response.'",
+    "token":"'.$token.'",
+    "message":"that right"
 }';
 }else{
-    return 'needed < 72';
+     return '{
+    "auth":"err",
+    "token":"empty",
+    "message":"ERROR 72"
+}';
   }
 }
 }
