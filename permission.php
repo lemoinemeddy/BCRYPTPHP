@@ -1,5 +1,5 @@
 <?php
-class member{
+class permission{
 public __constructor($user,$mdp){
 $this->try_signin($user, $mdp);
 }
