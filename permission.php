@@ -18,9 +18,9 @@ public function try_signin(){
 }';
 }else{
      return '{
-    "auth":"err",
+    "auth":"FALSE",
     "token":"empty",
-    "message":"ERROR 72"
+    "message":"ERROR72"
 }';
   }
 }
