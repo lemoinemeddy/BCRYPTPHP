@@ -30,11 +30,14 @@ echo $myhash; //response for the bot
 //Now, when im receive a hash by $_GET method, for example, im need to compare this :)
 if(isset($_GET['key'])){
 $request  = json_decode($json);
-$hashjson = $request[$_GET['key']];
-$decrypt = password_verify($hashjson, $_GET['key']);
+$datasjson = $request[$_GET['key'][1]];
+if($datasjson){
+$compare = array($key, $salt,$datasjson);
+$decrypt = password_verify($compare, $_GET['key']);
 if($decrypt == 'TRUE')
 {
 print $request->{$_GET['key']}; its my data
+}
 }
 }
 //only php application end
