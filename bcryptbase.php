@@ -37,7 +37,7 @@ $compare = array($key, $salt,$datasjson);
 $decrypt = password_verify($compare, $_GET['key']);
 if($decrypt == 'TRUE')
 {
-print $request->{$_GET['key']}; its my data
+print $request->{$_GET['key']}; //its my data
 }
 }
 }
