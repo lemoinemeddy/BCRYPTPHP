@@ -1,4 +1,5 @@
 <?php
+//THIS IS A SAMPLE
 //Im using sha1 for the first time, but you can use BCRYPT too
 //For question 57450675 of stackoverflow
 
