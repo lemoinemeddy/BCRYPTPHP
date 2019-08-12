@@ -1,6 +1,6 @@
 <?php
 //THIS IS A SAMPLE
-//Im using sha1 for the first time, but you can use BCRYPT too
+//Im using sha1 for the first step, but you can use BCRYPT too
 //For question 57450675 of stackoverflow
 
 $key = 'm0WWicy0pw'; // im store my key here bot & php
